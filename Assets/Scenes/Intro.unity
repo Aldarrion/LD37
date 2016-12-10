@@ -396,7 +396,7 @@ MonoBehaviour:
   itemId: 6
   indentLevel: 0
   targetObject: {fileID: 1261258886}
-  methodName: TurnOn()
+  methodName: TurnOn
   delay: 0
 --- !u!1 &731406999
 GameObject:
