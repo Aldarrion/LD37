@@ -52,6 +52,8 @@ public class CameraManager : MonoBehaviour
     public void TurnOn()
     {
         Instance.IsOn = true;
+        TargetPosition = MainCam.transform.position;
+        TargetRotation = MainCam.transform.rotation;
     }
 
     public void TurnOff()
