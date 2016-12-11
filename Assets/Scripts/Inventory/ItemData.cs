@@ -5,10 +5,11 @@ using System;
 
 public class ItemData : MonoBehaviour, IPointerClickHandler
 {
-    Item Item;
+    public Item Item { get; set; }
 
     private bool IsDragged;
     private Vector3 OriginalPosition;
+    private Transform OriginalParent;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -16,19 +17,23 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
         {
             IsDragged = true;
             OriginalPosition = transform.position;
+            OriginalParent = transform.parent;
+
+            ItemHolder.Instance.GetComponent<ItemHolder>().StartHolding(Item);
+            transform.SetParent(ItemHolder.Instance.transform);
+
+            Inventory.Close();
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            IsDragged = false;
-            transform.position = OriginalPosition;
+            ReturnToInventory();
         }
     }
 
-    void Update()
+    public void ReturnToInventory()
     {
-        if (IsDragged)
-        {
-            transform.position = Input.mousePosition;
-        }
+        IsDragged = false;
+        transform.SetParent(OriginalParent);
+        transform.position = OriginalPosition;
     }
 }

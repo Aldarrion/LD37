@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance { get; private set; }
+
     private int SlotCount;
     public GameObject InventoryPanel;
     public GameObject SlotPanel;
@@ -14,16 +16,56 @@ public class Inventory : MonoBehaviour
     public Item[] Items;
     public GameObject[] Slots;
 
+    private bool IsOpen;
+
+    public void Toggle()
+    {
+        if (Instance != null)
+        {
+            if (Instance.IsOpen)
+                Close();
+            else
+                Open();
+        }
+    }
+
+    public static void Open()
+    {
+        if (Instance != null)
+        {
+            Instance.InventoryPanel.SetActive(true);
+            Instance.IsOpen = true;
+        }
+    }
+
+    public static void Close()
+    {
+        if (Instance != null)
+        {
+            Instance.InventoryPanel.SetActive(false);
+            Instance.IsOpen = false;
+        }
+    }
+
     void Start()
     {
-        SlotCount = 24;
-        Items = new Item[SlotCount];
-        Slots = new GameObject[SlotCount];
-
-        for (int i = 0; i < SlotCount; i++)
+        if (Instance == null)
         {
-            Slots[i] = Instantiate(InventorySlot);
-            Slots[i].transform.SetParent(SlotPanel.transform);
+            Instance = this;
+            IsOpen = true;
+            SlotCount = 24;
+            Items = new Item[SlotCount];
+            Slots = new GameObject[SlotCount];
+
+            for (int i = 0; i < SlotCount; i++)
+            {
+                Slots[i] = Instantiate(InventorySlot);
+                Slots[i].transform.SetParent(SlotPanel.transform);
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -56,6 +98,7 @@ public class Inventory : MonoBehaviour
                 itemObj.transform.position = Slots[i].transform.position;
                 itemObj.GetComponent<Image>().sprite = item.Sprite;
                 itemObj.name = item.Name;
+                itemObj.GetComponent<ItemData>().Item = item;
 
                 break;
             }
