@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Spine.Unity;
+using Fungus;
 
 public class SantaController : MonoBehaviour {
 
@@ -39,6 +40,8 @@ public class SantaController : MonoBehaviour {
     private bool busy;
     private Coroutine move;
     private SkeletonAnimation skeletonAnim;
+
+    public Flowchart chart;
 
     //Debug
     public bool hatSwitchHandler = false;
@@ -127,6 +130,8 @@ public class SantaController : MonoBehaviour {
         }
         skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
         skeletonAnim.AnimationState.AddAnimation(0, "idle", true, 0);
+
+        chart.SendFungusMessage("ShakeCamera");
 
         GameController.Instance.EnableInput();
 
