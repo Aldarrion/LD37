@@ -22,10 +22,13 @@ public class Inventory : MonoBehaviour
     {
         if (Instance != null)
         {
-            if (Instance.IsOpen)
-                Close();
-            else
-                Open();
+            if (GameController.Instance.IsInputEnabled)
+            {
+                if (Instance.IsOpen)
+                    Close();
+                else
+                    Open();
+            }
         }
     }
 
@@ -62,6 +65,8 @@ public class Inventory : MonoBehaviour
                 Slots[i] = Instantiate(InventorySlot);
                 Slots[i].transform.SetParent(SlotPanel.transform);
             }
+
+            Close();
         }
         else
         {
@@ -100,6 +105,8 @@ public class Inventory : MonoBehaviour
                 itemObj.name = item.Name;
                 itemObj.GetComponent<ItemData>().Item = item;
 
+                // Blink inventory button
+                //GameObject.FindGameObjectWithTag("InventoryToggle").GetComponent<InventoryToggle>().Pulse();
                 break;
             }
         }

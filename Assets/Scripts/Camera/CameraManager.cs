@@ -6,6 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     //-- Editor fields --//
     public BoxCollider2D Bounds;
+    public BoxCollider2D SecondBounds;
     public float MoveSpeed;
     public float RotationSpeed;
     public bool IsOn;
@@ -51,14 +52,19 @@ public class CameraManager : MonoBehaviour
     //-- Interface --//
     public void TurnOn()
     {
-        Instance.IsOn = true;
+        IsOn = true;
         TargetPosition = MainCam.transform.position;
         TargetRotation = MainCam.transform.rotation;
     }
 
     public void TurnOff()
     {
-        Instance.IsOn = false;
+        IsOn = false;
+    }
+
+    public void SwitchToSecond()
+    {
+        Bounds = SecondBounds;
     }
 
     /// <summary>

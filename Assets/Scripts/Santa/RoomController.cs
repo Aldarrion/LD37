@@ -45,5 +45,4 @@ public class RoomController : MonoBehaviour {
             scenarioStart();
         }
     }
-
 }

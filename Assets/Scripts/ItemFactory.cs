@@ -10,8 +10,11 @@ public class ItemFactory : MonoBehaviour
 
     void OnMouseDown()
     {
-        Inventory.AddItem(new Item(Name, Sprite));
-        if (OnlyOne)
-            Destroy(gameObject);
+        if (GameController.Instance.IsInputEnabled)
+        {
+            Inventory.AddItem(new Item(Name, Sprite));
+            if (OnlyOne)
+                Destroy(gameObject);
+        }
     }
 }
