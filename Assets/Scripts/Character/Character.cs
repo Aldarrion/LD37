@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
     public void LandAndBurn()
     {
         var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
-        skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
+        skeletonAnim.AnimationState.SetAnimation(0, "fallIntoFlames", false);
         skeletonAnim.AnimationState.AddAnimation(0, "inFlames", true, 0);
     }
 
