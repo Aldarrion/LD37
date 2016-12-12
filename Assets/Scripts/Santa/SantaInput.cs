@@ -15,14 +15,17 @@ public class SantaInput : MonoBehaviour {
     // called each frame, checks for mouse clicks on movable areas to move the character there
     void OnMouseUp()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (GameController.Instance.IsInputEnabled)
         {
-            var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos3D.x, mousePos3D.y); // Cast the mouse position to 2D
-
-            if (walkableArea.OverlapPoint(mousePos2D)) //checks whether mouse is in the walkable area
+            if (Input.GetMouseButtonUp(0))
             {
-                SantaController.controller.MoveTo(new Vector3(mousePos2D.x, mousePos2D.y));
+                var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mousePos2D = new Vector2(mousePos3D.x, mousePos3D.y); // Cast the mouse position to 2D
+
+                if (walkableArea.OverlapPoint(mousePos2D)) //checks whether mouse is in the walkable area
+                {
+                    SantaController.controller.MoveTo(new Vector3(mousePos2D.x, mousePos2D.y));
+                }
             }
         }
     }

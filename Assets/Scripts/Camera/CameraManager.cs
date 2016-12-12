@@ -51,14 +51,14 @@ public class CameraManager : MonoBehaviour
     //-- Interface --//
     public void TurnOn()
     {
-        Instance.IsOn = true;
+        IsOn = true;
         TargetPosition = MainCam.transform.position;
         TargetRotation = MainCam.transform.rotation;
     }
 
     public void TurnOff()
     {
-        Instance.IsOn = false;
+        IsOn = false;
     }
 
     /// <summary>

@@ -98,8 +98,13 @@ public class SantaController : MonoBehaviour {
 
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.deltaTime);
-            yield return null;
+            if (GameController.Instance.IsInputEnabled)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.deltaTime);
+                yield return null;
+            }
+            else
+                break;
         }
         skeletonAnim.AnimationState.SetAnimation(0, "idle", true);
     }

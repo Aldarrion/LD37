@@ -28,10 +28,18 @@ public class ItemHolder : MonoBehaviour
         MoveToCurosr();
     }
 
-    public void StopHolding()
+    public void StopHolding(bool destroy = false)
     {
         IsHolding = false;
-        GetComponentInChildren<ItemData>().ReturnToInventory();
+        if (destroy)
+        {
+            Destroy(GetComponentInChildren<ItemData>().gameObject);
+        }
+        else
+        {
+            GetComponentInChildren<ItemData>().ReturnToInventory();
+        }
+
         transform.position = new Vector3(-5000, -5000, 5000);
         GetComponent<SpriteRenderer>().sprite = null;
         Destroy(gameObject.GetComponent<BoxCollider2D>());
@@ -45,7 +53,28 @@ public class ItemHolder : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 StopHolding();
+                return;
             }
+            else if(Input.GetMouseButton(0))
+            {
+                Item item = GetComponentInChildren<ItemData>().Item;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var objects = Physics2D.RaycastAll(ray.origin, ray.direction);
+
+                foreach (var obj in objects)
+                {
+                    Trap t = obj.collider.gameObject.GetComponent<Trap>();
+                    if (t != null)
+                    {
+                        if(t.UseOnSelf(item))
+                        {
+                            StopHolding(true);
+                            return;
+                        }
+                    }
+                }
+            }
+
             MoveToCurosr();
         }
     }
