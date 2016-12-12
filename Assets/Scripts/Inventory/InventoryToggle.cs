@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Fungus;
 
 public class InventoryToggle : MonoBehaviour
 {
-    private Coroutine PulseCr;
+
+    public Flowchart Chart;
 
     public void Pulse()
     {
-
+        Chart.SendFungusMessage("ShakeToggle");
     }
+
 }

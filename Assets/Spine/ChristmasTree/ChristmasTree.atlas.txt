@@ -1,0 +1,39 @@
+
+ChristmasTree.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tree
+  rotate: false
+  xy: 2, 2
+  size: 660, 832
+  orig: 660, 832
+  offset: 0, 0
+  index: -1
+
+ChristmasTree2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+decoration
+  rotate: false
+  xy: 2, 2
+  size: 535, 919
+  orig: 535, 919
+  offset: 0, 0
+  index: -1
+
+ChristmasTree3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light
+  rotate: false
+  xy: 2, 2
+  size: 553, 661
+  orig: 553, 661
+  offset: 0, 0
+  index: -1

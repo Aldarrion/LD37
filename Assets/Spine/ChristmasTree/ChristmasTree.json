@@ -1,0 +1,37 @@
+{
+"skeleton": { "hash": "2BAyAA3NWXSIkDUWopihO1x7cXc", "spine": "3.5.43", "width": 660, "height": 967, "images": "./ChristmasTree_images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "tree", "bone": "root", "attachment": "tree" },
+	{ "name": "decoration", "bone": "root", "attachment": "decoration" },
+	{ "name": "light", "bone": "root", "attachment": "light" }
+],
+"skins": {
+	"default": {
+		"decoration": {
+			"decoration": { "x": 14.64, "y": 406.24, "width": 535, "height": 919 }
+		},
+		"light": {
+			"light": { "x": 18.64, "y": 262.24, "width": 553, "height": 661 }
+		},
+		"tree": {
+			"tree": { "x": 4.14, "y": 314.74, "width": 660, "height": 832 }
+		}
+	}
+},
+"animations": {
+	"light": {
+		"slots": {
+			"light": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.7667, "color": "ffffff00" },
+					{ "time": 1.5, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

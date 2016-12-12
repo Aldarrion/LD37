@@ -6,6 +6,7 @@ using Spine.Unity;
 public class Character : MonoBehaviour
 {
     public Flowchart GameFlow;
+    public SkeletonAnimation chimneySmoke;
 
     public static Character Instance { get; private set; }
 
@@ -46,6 +47,7 @@ public class Character : MonoBehaviour
     {
         var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
         skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
+        chimneySmoke.AnimationState.SetAnimation(0, "coal", false);
         skeletonAnim.AnimationState.AddAnimation(0, "idle", true, 0);
     }
 

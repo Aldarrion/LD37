@@ -13,6 +13,11 @@ public class Inventory : MonoBehaviour
     public GameObject InventorySlot;
     public GameObject InventoryItem;
 
+    public Sprite coat;
+    public Sprite hat;
+    public Sprite shoes;
+    public Sprite gloves;
+    public Sprite presents;
     public Item[] Items;
     public GameObject[] Slots;
 
@@ -66,6 +71,12 @@ public class Inventory : MonoBehaviour
                 Slots[i].transform.SetParent(SlotPanel.transform);
             }
 
+            AddItem(new Item("Coat", coat), false, false);
+            AddItem(new Item("Hat", hat), false, false);
+            AddItem(new Item("Gloves", gloves), false, false);
+            AddItem(new Item("Shoes", shoes), false, false);
+            AddItem(new Item("Presents", presents), false, false);
+
             Close();
         }
         else
@@ -84,7 +95,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public void AddItem(Item item, bool duplicates = false)
+    public void AddItem(Item item, bool duplicates = false, bool shake = true)
     {
         // We don't want duplicates -> if we already have one return
         if (!duplicates && FindItem(item) != null)
@@ -105,8 +116,10 @@ public class Inventory : MonoBehaviour
                 itemObj.name = item.Name;
                 itemObj.GetComponent<ItemData>().Item = item;
 
+
                 // Blink inventory button
-                //GameObject.FindGameObjectWithTag("InventoryToggle").GetComponent<InventoryToggle>().Pulse();
+                if(shake)
+                    GameObject.FindGameObjectWithTag("InventoryToggle").GetComponent<InventoryToggle>().Pulse();
                 break;
             }
         }
