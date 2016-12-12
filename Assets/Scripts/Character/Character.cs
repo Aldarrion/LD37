@@ -21,11 +21,32 @@ public class Character : MonoBehaviour
         }
     }
 
-    public static void AnimBurn()
+    public void AnimBurn()
     {
         var skeletonAnim = Instance.GetComponent< SkeletonAnimation>();
         if (skeletonAnim.AnimationName != "inFlames")
             skeletonAnim.AnimationState.SetAnimation(0, "inFlames", true);
+    }
+
+    public void AnimFall()
+    {
+        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
+        if (skeletonAnim.AnimationName != "fall")
+            skeletonAnim.AnimationState.SetAnimation(0, "fall", true);
+    }
+
+    public void LandAndBurn()
+    {
+        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
+        skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
+        skeletonAnim.AnimationState.AddAnimation(0, "inFlames", true, 0);
+    }
+
+    public void LandAndStand()
+    {
+        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
+        skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
+        skeletonAnim.AnimationState.AddAnimation(0, "idle", true, 0);
     }
 
     public void Die(DeathReason reason)

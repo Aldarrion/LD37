@@ -7,12 +7,12 @@ public class GameController : MonoBehaviour
 
     public bool IsInputEnabled;
 
-    void EnableInput()
+    public void EnableInput()
     {
         IsInputEnabled = true;
     }
 
-    void DisableInput()
+    public void DisableInput()
     {
         IsInputEnabled = false;
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

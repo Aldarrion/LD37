@@ -128,6 +128,8 @@ public class SantaController : MonoBehaviour {
         skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
         skeletonAnim.AnimationState.AddAnimation(0, "idle", true, 0);
 
+        GameController.Instance.EnableInput();
+
     }
 
     public void changeHat(bool toggle) {
