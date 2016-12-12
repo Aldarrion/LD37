@@ -1,0 +1,20 @@
+
+Electricity.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shade
+  rotate: false
+  xy: 2, 97
+  size: 86, 136
+  orig: 86, 136
+  offset: 0, 0
+  index: -1
+volt
+  rotate: false
+  xy: 2, 2
+  size: 29, 93
+  orig: 29, 93
+  offset: 0, 0
+  index: -1

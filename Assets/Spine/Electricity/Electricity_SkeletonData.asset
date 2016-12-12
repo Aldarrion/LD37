@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: SantaSide_SkeletonData
+  m_Name: Electricity_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 26a1d137153c9954abcbafc52ebbfa3c, type: 2}
+  - {fileID: 11400000, guid: 8963bc02331d3fb4ca0b82fb8a55a577, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: bddea7b7a73f21f44a7079a378c2dc79, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 0d1d7c947cbee2c42a9a22079731ee71, type: 3}
   fromAnimation: []
   toAnimation: []
   duration: []
