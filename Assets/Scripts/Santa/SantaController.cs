@@ -84,6 +84,12 @@ public class SantaController : MonoBehaviour {
         }
     }
 
+    public void StopMotion()
+    {
+        if (move != null)
+                StopCoroutine(move);
+    }
+
     IEnumerator MoveToCoroutine(Vector3 target)
     {
         // Can we continue already started move animation?
