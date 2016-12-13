@@ -9,12 +9,14 @@ public class Character : MonoBehaviour
     public SkeletonAnimation chimneySmoke;
 
     public static Character Instance { get; private set; }
+    private SkeletonAnimation skeletonAnim;
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
         }
         else
         {
@@ -24,31 +26,34 @@ public class Character : MonoBehaviour
 
     public void AnimBurn()
     {
-        var skeletonAnim = Instance.GetComponent< SkeletonAnimation>();
         if (skeletonAnim.AnimationName != "inFlames")
             skeletonAnim.AnimationState.SetAnimation(0, "inFlames", true);
     }
 
     public void AnimFall()
     {
-        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
         if (skeletonAnim.AnimationName != "fall")
             skeletonAnim.AnimationState.SetAnimation(0, "fall", true);
     }
 
     public void LandAndBurn()
     {
-        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
         skeletonAnim.AnimationState.SetAnimation(0, "fallIntoFlames", false);
         skeletonAnim.AnimationState.AddAnimation(0, "inFlames", true, 0);
     }
 
     public void LandAndStand()
     {
-        var skeletonAnim = Instance.GetComponent<SkeletonAnimation>();
         skeletonAnim.AnimationState.SetAnimation(0, "hitGround", false);
         chimneySmoke.AnimationState.SetAnimation(0, "coal", false);
         skeletonAnim.AnimationState.AddAnimation(0, "idle", true, 0);
+    }
+
+    public void SlideAndElectrize()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "slide", false);
+        skeletonAnim.AnimationState.AddAnimation(0, "fallOnBack", false, 0);
+        skeletonAnim.AnimationState.AddAnimation(0, "electrizeGround", true, 0.8f);
     }
 
     public void Die(DeathReason reason)
@@ -61,6 +66,7 @@ public class Character : MonoBehaviour
             case DeathReason.Slip:
                 break;
             case DeathReason.RoofElectricity:
+                GameFlow.SendFungusMessage("SlideOnIce");
                 break;
             case DeathReason.TreeElectricity:
                 break;
