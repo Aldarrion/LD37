@@ -1,0 +1,48 @@
+
+Kitten.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 352, 276
+  size: 82, 80
+  orig: 82, 80
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 31
+  size: 172, 185
+  orig: 172, 185
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 2, 218
+  size: 348, 263
+  orig: 348, 263
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 352, 358
+  size: 129, 123
+  orig: 129, 123
+  offset: 0, 0
+  index: -1
+paw
+  rotate: false
+  xy: 176, 102
+  size: 68, 114
+  orig: 68, 114
+  offset: 0, 0
+  index: -1
+thread
+  rotate: false
+  xy: 2, 16
+  size: 89, 13
+  orig: 89, 13
+  offset: 0, 0
+  index: -1
