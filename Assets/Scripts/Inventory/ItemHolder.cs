@@ -25,7 +25,8 @@ public class ItemHolder : MonoBehaviour
         IsHolding = true;
         GetComponent<SpriteRenderer>().sprite = item.Sprite;
         gameObject.AddComponent<BoxCollider2D>();
-        MoveToCurosr();
+        MoveToCursor();
+        SantaController.controller.changeClothes(item.Name, false);
     }
 
     public void StopHolding(bool destroy = false)
@@ -69,19 +70,21 @@ public class ItemHolder : MonoBehaviour
                         if(t.UseOnSelf(item))
                         {
                             StopHolding(true);
+                            SantaController.controller.ComeCloserToObj(obj.collider.gameObject.transform.position, item.Name);
                             return;
                         }
                     }
                 }
             }
 
-            MoveToCurosr();
+            MoveToCursor();
         }
     }
 
-    void MoveToCurosr()
+    void MoveToCursor()
     {
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(worldMousePos.x, worldMousePos.y, -2.1f);
     }
+
 }

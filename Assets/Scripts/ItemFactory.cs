@@ -12,9 +12,14 @@ public class ItemFactory : MonoBehaviour
     {
         if (GameController.Instance.IsInputEnabled)
         {
-            Inventory.AddItem(new Item(Name, Sprite));
-            if (OnlyOne)
-                Destroy(gameObject);
+            SantaController.controller.ComeCloserToObj(gameObject.transform.position, Name);
         }
     }
+
+    public void ProduceItem() {
+        Inventory.AddItem(new Item(Name, Sprite));
+        if (OnlyOne)
+            Destroy(gameObject);
+    }
+
 }

@@ -35,5 +35,6 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
         IsDragged = false;
         transform.SetParent(OriginalParent);
         transform.position = OriginalPosition;
+        SantaController.controller.changeClothes(Item.Name, true);
     }
 }

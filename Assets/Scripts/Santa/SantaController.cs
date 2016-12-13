@@ -43,16 +43,6 @@ public class SantaController : MonoBehaviour {
 
     public Flowchart chart;
 
-    //Debug
-    public bool hatSwitchHandler = false;
-    private bool hatToggle = false;
-    public bool shoesSwitchHandler = false;
-    private bool shoesToggle = false;
-    public bool coatSwitchHandler = false;
-    private bool coatToggle = false;
-    public bool glovesSwitchHandler = false;
-    private bool glovesToggle = false;
-
     void Awake()
     {
         if (controller == null)
@@ -73,14 +63,36 @@ public class SantaController : MonoBehaviour {
         skeletonAnim.AnimationState.SetAnimation(0, "idle", true);
     }
 
-    public void MoveTo(Vector3 target)
+    public void ComeCloserToObj(Vector2 target, string message = null)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(target, -Vector2.up, Mathf.Infinity, 0 | (1 << LayerMask.NameToLayer("WalkableArea")));
+        Vector2 destination;
+        if (hit.collider == null)
+        {
+            hit = Physics2D.Raycast(target, Vector2.up, Mathf.Infinity, 0 | (1 << LayerMask.NameToLayer("WalkableArea")));
+            destination = hit.point;
+            destination.y += 0.001f;
+        }
+        else
+        {
+            destination = hit.point;
+            destination.y -= 0.001f;
+        }
+        if (hit.collider != null)
+        {
+            MoveTo(destination, message);
+            return;
+        }
+    }
+
+    public void MoveTo(Vector3 target, string message = null)
     {
         if (!busy)
         {
             if (move != null)
                 StopCoroutine(move);
 
-            move = StartCoroutine(MoveToCoroutine(target));
+            move = StartCoroutine(MoveToCoroutine(target, message));
         }
     }
 
@@ -90,7 +102,7 @@ public class SantaController : MonoBehaviour {
                 StopCoroutine(move);
     }
 
-    IEnumerator MoveToCoroutine(Vector3 target)
+    IEnumerator MoveToCoroutine(Vector3 target, string message = null)
     {
         // Can we continue already started move animation?
         if (skeletonAnim.AnimationName != "walk")
@@ -116,6 +128,27 @@ public class SantaController : MonoBehaviour {
                 break;
         }
         skeletonAnim.AnimationState.SetAnimation(0, "idle", true);
+
+        if (message != null) {
+            chart.SendFungusMessage(message);
+        }
+    }
+
+    public void changeClothes(string itemName, bool toggle) {
+        switch (itemName) {
+            case "Hat":
+                changeHat(toggle);
+                break;
+            case "Coat":
+                changeCoat(toggle);
+                break;
+            case "Shoes":
+                changeShoes(toggle);
+                break;
+            case "Gloves":
+                changeGloves(toggle);
+                break;
+        }
     }
 
     public void FallTo(Transform target)
@@ -199,34 +232,5 @@ public class SantaController : MonoBehaviour {
             skeletonRenderer.skeleton.SetAttachment(rightGloveStretch, null);
         }
     }
-
-    // Update is called once per frame
-    void Update () {
-
-        if (hatSwitchHandler)
-        {
-            hatSwitchHandler = false;
-            changeHat(hatToggle);
-            hatToggle = !hatToggle;
-        }
-        if (coatSwitchHandler)
-        {
-            coatSwitchHandler = false;
-            changeCoat(coatToggle);
-            coatToggle = !coatToggle;
-        }
-        if (shoesSwitchHandler)
-        {
-            shoesSwitchHandler = false;
-            changeShoes(shoesToggle);
-            shoesToggle = !shoesToggle;
-        }
-        if (glovesSwitchHandler)
-        {
-            glovesSwitchHandler = false;
-            changeGloves(glovesToggle);
-            glovesToggle = !glovesToggle;
-        }
-
-    }
+    
 }

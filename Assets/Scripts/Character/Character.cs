@@ -11,6 +11,8 @@ public class Character : MonoBehaviour
     public static Character Instance { get; private set; }
     private SkeletonAnimation skeletonAnim;
 
+    public Transform Chimney;
+
     void Awake()
     {
         if (Instance == null)
@@ -23,15 +25,12 @@ public class Character : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void AnimBurn()
-    {
-        if (skeletonAnim.AnimationName != "inFlames")
-            skeletonAnim.AnimationState.SetAnimation(0, "inFlames", true);
-    }
-
+    
     public void AnimFall()
     {
+        if (skeletonAnim.skeleton.flipX) 
+            skeletonAnim.skeleton.FlipX = false;
+
         if (skeletonAnim.AnimationName != "fall")
             skeletonAnim.AnimationState.SetAnimation(0, "fall", true);
     }
@@ -56,12 +55,23 @@ public class Character : MonoBehaviour
         skeletonAnim.AnimationState.AddAnimation(0, "electrizeGround", true, 0.8f);
     }
 
+    public void Electrize()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "shocked", false);
+        skeletonAnim.AnimationState.AddAnimation(0, "electrize", true, 0);
+    }
+
+    public void JumpIntoChimney()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "jump", false);
+    }
+
     public void Die(DeathReason reason)
     {
         switch (reason)
         {
             case DeathReason.Fire:
-                GameFlow.SendFungusMessage("DieFire");
+                SantaController.controller.ComeCloserToObj(Chimney.position, "DieFire");
                 break;
             case DeathReason.Slip:
                 break;
@@ -69,6 +79,7 @@ public class Character : MonoBehaviour
                 GameFlow.SendFungusMessage("SlideOnIce");
                 break;
             case DeathReason.TreeElectricity:
+                GameFlow.SendFungusMessage("StepOnCable");
                 break;
             case DeathReason.Dog:
                 break;
@@ -84,7 +95,8 @@ public class Character : MonoBehaviour
             case ContinueReason.None:
                 break;
             case ContinueReason.Chimney:
-                GameFlow.SendFungusMessage("GoChimney");
+                SantaController.controller.ComeCloserToObj(Chimney.position , "GoChimney");
+                //GameFlow.SendFungusMessage("GoChimney");
                 break;
             default:
                 break;
