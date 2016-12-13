@@ -948,6 +948,9 @@ GameObject:
   - 114: {fileID: 458630713}
   - 114: {fileID: 458630716}
   - 114: {fileID: 458630717}
+  - 114: {fileID: 458630718}
+  - 114: {fileID: 458630720}
+  - 114: {fileID: 458630719}
   m_Layer: 0
   m_Name: IntroFlow
   m_TagString: Untagged
@@ -1006,7 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 595.1607, y: -173.22597}
+  scrollPos: {x: 706.58923, y: -100.368866}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 444
@@ -1016,8 +1019,8 @@ MonoBehaviour:
     x: -980.40485
     y: -372
     width: 1816.4048
-    height: 1199.4934
-  selectedBlock: {fileID: 0}
+    height: 1204.1046
+  selectedBlock: {fileID: 458630714}
   selectedCommands: []
   variables: []
   description: 
@@ -2373,7 +2376,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 13.265808
-    y: 384.9618
+    y: 392.1046
     width: 120
     height: 40
   itemId: 66
@@ -2381,9 +2384,12 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 458630715}
   commandList:
+  - {fileID: 458630720}
+  - {fileID: 458630719}
   - {fileID: 458630717}
   - {fileID: 458630713}
   - {fileID: 458630716}
+  - {fileID: 458630718}
 --- !u!114 &458630715
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2450,6 +2456,55 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 1785326772}
   methodName: StopMotion
+  delay: 0
+--- !u!114 &458630718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 70
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 458630661}
+  startIndex: 0
+  callMode: 0
+--- !u!114 &458630719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 72
+  indentLevel: 0
+  targetObject: {fileID: 869539945}
+  methodName: DisableInput
+  delay: 0
+--- !u!114 &458630720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 71
+  indentLevel: 0
+  targetObject: {fileID: 1261258886}
+  methodName: TurnOff
   delay: 0
 --- !u!1 &710626320
 GameObject:
