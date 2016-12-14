@@ -70,7 +70,7 @@ public class ItemHolder : MonoBehaviour
                         if(t.UseOnSelf(item))
                         {
                             StopHolding(true);
-                            SantaController.controller.ComeCloserToObj(obj.collider.gameObject.transform.position, item.Name);
+                            SantaController.controller.ComeCloserToObj(obj.collider.gameObject.transform.position, "Use" + item.Name);
                             return;
                         }
                     }

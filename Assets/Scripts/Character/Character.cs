@@ -61,6 +61,11 @@ public class Character : MonoBehaviour
         skeletonAnim.AnimationState.AddAnimation(0, "electrize", true, 0);
     }
 
+    public void ScaredByDog()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "shocked", false);
+    }
+
     public void JumpIntoChimney()
     {
         skeletonAnim.AnimationState.SetAnimation(0, "jump", false);
@@ -82,6 +87,7 @@ public class Character : MonoBehaviour
                 GameFlow.SendFungusMessage("StepOnCable");
                 break;
             case DeathReason.Dog:
+                GameFlow.SendFungusMessage("ScaredByDog");
                 break;
             default:
                 break;

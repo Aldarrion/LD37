@@ -597,6 +597,7 @@ GameObject:
   - 33: {fileID: 198250801}
   - 23: {fileID: 198250800}
   - 114: {fileID: 198250799}
+  - 114: {fileID: 198250802}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -611,12 +612,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 198250797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.86, y: -10.39, z: 0}
+  m_LocalPosition: {x: -3.25, y: 0.5899992, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1743478654}
-  m_RootOrder: 0
+  m_Father: {fileID: 1205461710}
+  m_RootOrder: 1
 --- !u!114 &198250799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +680,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 198250797}
   m_Mesh: {fileID: 0}
+--- !u!114 &198250802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198250797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42788588ee1e78a41b1dc96889f8e833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &294713252
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +987,6 @@ GameObject:
   - 114: {fileID: 458630666}
   - 114: {fileID: 458630667}
   - 114: {fileID: 458630665}
-  - 114: {fileID: 458630669}
   - 114: {fileID: 458630670}
   - 114: {fileID: 458630660}
   - 114: {fileID: 458630672}
@@ -1054,6 +1065,21 @@ GameObject:
   - 114: {fileID: 458630677}
   - 114: {fileID: 458630671}
   - 114: {fileID: 458630740}
+  - 114: {fileID: 458630741}
+  - 114: {fileID: 458630743}
+  - 114: {fileID: 458630742}
+  - 114: {fileID: 458630744}
+  - 114: {fileID: 458630751}
+  - 114: {fileID: 458630748}
+  - 114: {fileID: 458630750}
+  - 114: {fileID: 458630749}
+  - 114: {fileID: 458630747}
+  - 114: {fileID: 458630746}
+  - 114: {fileID: 458630745}
+  - 114: {fileID: 458630669}
+  - 114: {fileID: 458630754}
+  - 114: {fileID: 458630753}
+  - 114: {fileID: 458630752}
   m_Layer: 0
   m_Name: IntroFlow
   m_TagString: Untagged
@@ -1112,19 +1138,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 515.896, y: -122.538605}
+  scrollPos: {x: 710.3286, y: -137.07202}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 444
-  zoom: 0.91000015
+  zoom: 0.7300003
   scrollViewRect:
     serializedVersion: 2
     x: -1382.9436
     y: -372
-    width: 2397.2715
-    height: 1244.0315
-  selectedBlock: {fileID: 458630672}
-  selectedCommands: []
+    width: 2402.954
+    height: 1245.8169
+  selectedBlock: {fileID: 458630744}
+  selectedCommands:
+  - {fileID: 458630752}
   variables: []
   description: 
   stepPause: 0
@@ -1347,7 +1374,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 458630669}
   - {fileID: 458630691}
   - {fileID: 458630690}
 --- !u!114 &458630662
@@ -1376,8 +1402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 9
-    y: 162
+    x: -0.99993896
+    y: 166.28569
     width: 120
     height: 40
   itemId: 9
@@ -1398,6 +1424,7 @@ MonoBehaviour:
   - {fileID: 458630666}
   - {fileID: 458630665}
   - {fileID: 458630711}
+  - {fileID: 458630669}
   - {fileID: 458630660}
 --- !u!114 &458630664
 MonoBehaviour:
@@ -1527,7 +1554,7 @@ MonoBehaviour:
   toPositionOLD: {x: 0, y: 0, z: 0}
 --- !u!114 &458630669
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -1536,9 +1563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 18
+  itemId: 103
   indentLevel: 0
-  storyText: Game over. You let santa die.
+  storyText: Now this was hot! Anyway this is game over for you.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1568,7 +1595,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &458630671
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -1617,8 +1644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 12
-    y: 235
+    x: 494.2962
+    y: 249.75572
     width: 120
     height: 40
   itemId: 21
@@ -1708,7 +1735,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &458630677
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2498,8 +2525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 11.626465
-    y: 297.0227
+    x: -1.2306519
+    y: 235.59415
     width: 120
     height: 40
   itemId: 66
@@ -2512,6 +2539,7 @@ MonoBehaviour:
   - {fileID: 458630717}
   - {fileID: 458630713}
   - {fileID: 458630716}
+  - {fileID: 458630754}
   - {fileID: 458630718}
 --- !u!114 &458630715
 MonoBehaviour:
@@ -2736,8 +2764,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 6.6188354
-    y: 358.261
+    x: -4.8097534
+    y: 299.6895
     width: 125
     height: 40
   itemId: 73
@@ -2749,6 +2777,7 @@ MonoBehaviour:
   - {fileID: 458630724}
   - {fileID: 458630723}
   - {fileID: 458630722}
+  - {fileID: 458630753}
   - {fileID: 458630721}
 --- !u!114 &458630728
 MonoBehaviour:
@@ -2763,12 +2792,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -312.38922
-    y: 218.02338
-    width: 120
+    x: -403.5284
+    y: 220.55502
+    width: 125
     height: 40
   itemId: 80
-  blockName: CoatOnIce
+  blockName: UseItemCoat
   description: 
   eventHandler: {fileID: 458630730}
   commandList:
@@ -2805,10 +2834,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 458630728}
-  message: Coat
+  message: UseCoat
 --- !u!114 &458630731
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2824,7 +2853,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &458630732
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2835,19 +2864,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -310.46606
-    y: 288.23138
+    x: -242.11163
+    y: 222.40863
     width: 120
     height: 40
   itemId: 82
-  blockName: GetIce
+  blockName: GetItemIce
   description: 
   eventHandler: {fileID: 458630733}
   commandList:
   - {fileID: 458630731}
 --- !u!114 &458630733
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2857,10 +2886,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 458630732}
-  message: Snow
+  message: GetSnow
 --- !u!114 &458630734
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2898,7 +2927,7 @@ MonoBehaviour:
   toPositionOLD: {x: 0, y: 0, z: 0}
 --- !u!114 &458630735
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2914,7 +2943,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &458630736
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2952,7 +2981,7 @@ MonoBehaviour:
   toPositionOLD: {x: 0, y: 0, z: 0}
 --- !u!114 &458630737
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2969,7 +2998,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &458630738
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -2986,7 +3015,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &458630739
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -3002,7 +3031,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &458630740
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458630648}
@@ -3020,6 +3049,272 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 0
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &458630741
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: -407.83322
+    y: 276.85516
+    width: 133
+    height: 40
+  itemId: 94
+  blockName: UseItemShoes
+  description: 
+  eventHandler: {fileID: 458630743}
+  commandList:
+  - {fileID: 458630742}
+--- !u!114 &458630742
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 95
+  indentLevel: 0
+  targetObject: {fileID: 198250797}
+  methodName: ChewShoe
+  delay: 0
+--- !u!114 &458630743
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 458630741}
+  message: UseShoes
+--- !u!114 &458630744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: -6.766449
+    y: 367.6506
+    width: 128
+    height: 40
+  itemId: 96
+  blockName: ScaredByDog
+  description: 
+  eventHandler: {fileID: 458630751}
+  commandList:
+  - {fileID: 458630750}
+  - {fileID: 458630749}
+  - {fileID: 458630748}
+  - {fileID: 458630747}
+  - {fileID: 458630746}
+  - {fileID: 458630752}
+  - {fileID: 458630745}
+--- !u!114 &458630745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 102
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 458630661}
+  startIndex: 0
+  callMode: 0
+--- !u!114 &458630746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 101
+  indentLevel: 0
+  targetObject: {fileID: 1785326772}
+  methodName: ScaredByDog
+  delay: 0
+--- !u!114 &458630747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 100
+  indentLevel: 0
+  targetObject: {fileID: 1785326772}
+  methodName: StopMotion
+  delay: 0
+--- !u!114 &458630748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 0
+  targetObject: {fileID: 198250797}
+  methodName: OpenEyeAndShowTeeth
+  delay: 0
+--- !u!114 &458630749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 99
+  indentLevel: 0
+  targetObject: {fileID: 869539945}
+  methodName: DisableInput
+  delay: 0
+--- !u!114 &458630750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 98
+  indentLevel: 0
+  targetObject: {fileID: 1261258886}
+  methodName: TurnOff
+  delay: 0
+--- !u!114 &458630751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 458630744}
+  message: ScaredByDog
+--- !u!114 &458630752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 106
+  indentLevel: 0
+  storyText: Now you know who else hates your dog except for your mailman. Game over.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &458630753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 105
+  indentLevel: 0
+  storyText: So close... and still so far. Game over. Shocking.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &458630754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458630648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 104
+  indentLevel: 0
+  storyText: Game over. You let santa die, next time look where you are going.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  setSayDialog: {fileID: 0}
 --- !u!1 &710626320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +4080,62 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 880341129}
+--- !u!1 &923707871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 923707872}
+  - 114: {fileID: 923707874}
+  - 61: {fileID: 923707873}
+  m_Layer: 0
+  m_Name: TrapTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &923707872
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923707871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.46, y: -1.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1205461710}
+  m_RootOrder: 0
+--- !u!61 &923707873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923707871}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.48507783, y: -0.38297057}
+  serializedVersion: 2
+  m_Size: {x: 2.8892922, y: 4.42118}
+--- !u!114 &923707874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923707871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f551301b0b4adf44799ffc34e132516a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trap: {fileID: 1205461711}
 --- !u!1 &933713932
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4521,7 @@ MonoBehaviour:
   ContinueReason: 0
   Disablers:
   - Rag
+  externalTrigger: {fileID: 0}
 --- !u!1 &1134340251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,6 +4677,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1946548917}
   m_RootOrder: 3
+--- !u!1 &1205461709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1205461710}
+  - 114: {fileID: 1205461711}
+  - 61: {fileID: 1205461712}
+  m_Layer: 0
+  m_Name: DogTrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1205461710
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205461709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -10.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 923707872}
+  - {fileID: 198250798}
+  m_Father: {fileID: 1743478654}
+  m_RootOrder: 0
+--- !u!114 &1205461711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205461709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4219439ed1c89064bb3b4c3bc2ef219e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clickable: 1
+  DieReason: 4
+  ContinueReason: 0
+  Disablers:
+  - Shoes
+  externalTrigger: {fileID: 923707871}
+--- !u!61 &1205461712
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205461709}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -3.2106323, y: 1.8324347}
+  serializedVersion: 2
+  m_Size: {x: 5.770396, y: 2.6021175}
 --- !u!1 &1261258886 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011994897540, guid: 2f475ae077da49f4d921cf29e6f05bdd,
@@ -4819,7 +5234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 198250798}
+  - {fileID: 1205461710}
   - {fileID: 1720215312}
   - {fileID: 799480911}
   - {fileID: 296359637}
@@ -5336,6 +5751,7 @@ MonoBehaviour:
   ContinueReason: 0
   Disablers:
   - Coat
+  externalTrigger: {fileID: 0}
 --- !u!1 &1850198130
 GameObject:
   m_ObjectHideFlags: 0

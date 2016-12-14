@@ -22,6 +22,7 @@ public class Trap : MonoBehaviour
     public DeathReason DieReason;
     public ContinueReason ContinueReason;
     public string[] Disablers;
+    public GameObject externalTrigger = null;
 
 
     public bool IsDisabled { get; set; }
@@ -42,6 +43,7 @@ public class Trap : MonoBehaviour
     public void Disable()
     {
         IsDisabled = true;
+        if (externalTrigger != null) externalTrigger.SetActive(false);
     }
 
     void OnMouseDown()

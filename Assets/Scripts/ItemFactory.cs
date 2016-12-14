@@ -12,7 +12,7 @@ public class ItemFactory : MonoBehaviour
     {
         if (GameController.Instance.IsInputEnabled)
         {
-            SantaController.controller.ComeCloserToObj(gameObject.transform.position, Name);
+            SantaController.controller.ComeCloserToObj(gameObject.transform.position, "Get" + Name);
         }
     }
 
