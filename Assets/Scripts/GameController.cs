@@ -7,10 +7,18 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public bool IsInputEnabled;
+    public Texture2D icon = null;
+
+    public void setNextCursor(Texture2D nextIon = null)
+    {
+        if (nextIon == null) icon = null;
+        else icon = nextIon;
+    }
 
     public void EnableInput()
     {
         IsInputEnabled = true;
+        Cursor.SetCursor(icon, Vector2.zero, CursorMode.Auto);
     }
 
     public void DisableInput()

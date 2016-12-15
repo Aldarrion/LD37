@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using System;
+using Fungus;
 
 public class ItemHolder : MonoBehaviour
 {
     public static ItemHolder Instance { get; private set; }
     public bool IsHolding { get; private set; }
+    public Flowchart GameFlow;
 
     void Awake()
     {
@@ -40,7 +42,6 @@ public class ItemHolder : MonoBehaviour
         {
             GetComponentInChildren<ItemData>().ReturnToInventory();
         }
-
         transform.position = new Vector3(-5000, -5000, 5000);
         GetComponent<SpriteRenderer>().sprite = null;
         Destroy(gameObject.GetComponent<BoxCollider2D>());
@@ -53,11 +54,14 @@ public class ItemHolder : MonoBehaviour
             // Don't care where we are, right click returns item to inventory
             if (Input.GetMouseButtonDown(1))
             {
-                StopHolding();
+                StopHolding(false);
                 return;
             }
-            else if(Input.GetMouseButton(0))
+            else
             {
+                //change color
+                GetComponent<SpriteRenderer>().color = Color.white;
+
                 Item item = GetComponentInChildren<ItemData>().Item;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 var objects = Physics2D.RaycastAll(ray.origin, ray.direction);
@@ -67,11 +71,18 @@ public class ItemHolder : MonoBehaviour
                     Trap t = obj.collider.gameObject.GetComponent<Trap>();
                     if (t != null)
                     {
-                        if(t.UseOnSelf(item))
+                        if (t.CanUseOnSelf(item))
                         {
-                            StopHolding(true);
-                            SantaController.controller.ComeCloserToObj(obj.collider.gameObject.transform.position, "Use" + item.Name);
-                            return;
+                            //change color
+                            GetComponent<SpriteRenderer>().color = Color.yellow;
+                            if (Input.GetMouseButton(0))
+                            {
+                                t.UseOnSelf();
+                                StopHolding(true);
+                                GameFlow.SendFungusMessage("PutItem");
+                                SantaController.controller.ComeCloserToObj(obj.collider.gameObject.transform.position, "Use" + item.Name);
+                                return;
+                            }
                         }
                     }
                 }

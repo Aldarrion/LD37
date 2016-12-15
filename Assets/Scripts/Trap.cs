@@ -3,8 +3,9 @@ using System.Collections;
 
 public enum DeathReason
 {
+    None,
     Fire,
-    Slip,
+    Lego,
     RoofElectricity,
     TreeElectricity,
     Dog
@@ -27,13 +28,17 @@ public class Trap : MonoBehaviour
 
     public bool IsDisabled { get; set; }
 
-    public bool UseOnSelf(Item item)
+    public void UseOnSelf()
+    {
+        Disable();
+    }
+
+    public bool CanUseOnSelf(Item item)
     {
         foreach (var d in Disablers)
         {
             if (d == item.Name)
             {
-                Disable();
                 return true;
             }
         }

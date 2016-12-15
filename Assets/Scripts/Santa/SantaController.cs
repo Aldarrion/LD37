@@ -119,16 +119,10 @@ public class SantaController : MonoBehaviour {
 
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
-            if (GameController.Instance.IsInputEnabled)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.deltaTime);
-                yield return null;
-            }
-            else
-                break;
+            transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.deltaTime);
+            yield return null;
         }
         skeletonAnim.AnimationState.SetAnimation(0, "idle", true);
-
         if (message != null) {
             chart.SendFungusMessage(message);
         }

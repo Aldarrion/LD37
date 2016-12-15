@@ -66,6 +66,11 @@ public class Character : MonoBehaviour
         skeletonAnim.AnimationState.SetAnimation(0, "shocked", false);
     }
 
+    public void StepOnLego()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "shocked", false);
+    }
+
     public void JumpIntoChimney()
     {
         skeletonAnim.AnimationState.SetAnimation(0, "jump", false);
@@ -78,7 +83,8 @@ public class Character : MonoBehaviour
             case DeathReason.Fire:
                 SantaController.controller.ComeCloserToObj(Chimney.position, "DieFire");
                 break;
-            case DeathReason.Slip:
+            case DeathReason.Lego:
+                GameFlow.SendFungusMessage("StepOnLego");
                 break;
             case DeathReason.RoofElectricity:
                 GameFlow.SendFungusMessage("SlideOnIce");
@@ -88,8 +94,6 @@ public class Character : MonoBehaviour
                 break;
             case DeathReason.Dog:
                 GameFlow.SendFungusMessage("ScaredByDog");
-                break;
-            default:
                 break;
         }
     }
