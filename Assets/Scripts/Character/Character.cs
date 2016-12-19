@@ -76,6 +76,11 @@ public class Character : MonoBehaviour
         skeletonAnim.AnimationState.SetAnimation(0, "jump", false);
     }
 
+    public void Smile()
+    {
+        skeletonAnim.AnimationState.SetAnimation(0, "smile", false);
+    }
+
     public void Die(DeathReason reason)
     {
         switch (reason)
