@@ -95,6 +95,18 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public void RemoveItem(Item item)
+    {
+        for (int i = 0; i < Items.Length; i++)
+        {
+            if (Items[i].Name == item.Name)
+            {
+                Items[i] = null;
+                return;
+            }
+        }
+    }
+
     public void AddItem(Item item, bool duplicates = false, bool shake = true)
     {
         // We don't want duplicates -> if we already have one return
